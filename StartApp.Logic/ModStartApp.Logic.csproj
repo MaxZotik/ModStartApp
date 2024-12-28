@@ -15,14 +15,17 @@
     <Reference Include="ScadaCommon">
       <HintPath>..\..\..\..\Program Files\SCADA\ScadaAdmin\ScadaCommon.dll</HintPath>
       <Private>True</Private>
+      <EmbedInteropTypes></EmbedInteropTypes>
     </Reference>
     <Reference Include="ScadaCommon.Log">
       <HintPath>..\..\..\..\Program Files\SCADA\ScadaAdmin\ScadaCommon.Log.dll</HintPath>
       <Private>True</Private>
+      <EmbedInteropTypes></EmbedInteropTypes>
     </Reference>
     <Reference Include="ScadaServerCommon">
       <HintPath>..\..\..\..\Program Files\SCADA\ScadaAdmin\ScadaServerCommon.dll</HintPath>
       <Private>True</Private>
+      <EmbedInteropTypes></EmbedInteropTypes>
     </Reference>
   </ItemGroup>
 

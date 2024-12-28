@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<StartAppLogicConfig>
+	<Config>
+		<Server>.\DREAM</Server>
+		<NameDb>BaltikaSamara</NameDb>
+		<User>RapidUser</User>
+		<Password>1990#vast</Password>
+	</Config>
+</StartAppLogicConfig>

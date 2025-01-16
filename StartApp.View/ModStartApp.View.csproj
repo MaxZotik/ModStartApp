@@ -6,6 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
 	<RootNamespace>Scada.Server.Modules.ModStartApp.View</RootNamespace>
+	<AssemblyVersion>1.0.0.1</AssemblyVersion>
+	<FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

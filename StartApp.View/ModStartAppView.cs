@@ -8,7 +8,7 @@ namespace Scada.Server.Modules.ModStartApp.View
 {
     public class ModStartAppView : ModuleView
     {
-        public override string Name => "Модуль StartApp";
-        public override string Descr => "Модуль устанавливает настройки из БД";
+        public override string Name => "Модуль ModStartApp";
+        public override string Descr => "Модуль устанавливает настройки уставок из БД и даты последнего пользовательского отчета";
     }
 }

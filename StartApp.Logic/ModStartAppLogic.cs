@@ -10,20 +10,21 @@ namespace Scada.Server.Modules.ModStartApp.Logic
     {
         bool sendDataLimits = true;
         bool sendDataWritePeriod = true;
+        bool sendDateConfig = true;
         public ModStartAppLogic(IServerContext serverContext) : base(serverContext)
         {
         }
 
-        public override string Code => "StartApp";
+        public override string Code => "ModStartApp";
 
         public override void OnServiceStart()
         {
-            Log.WriteAction("Модуль StartApp запущен");
+            Log.WriteAction("Модуль ModStartApp запущен");
         }
 
         public override void OnServiceStop()
         {
-            Log.WriteAction("Модуль StartApp остановлен");
+            Log.WriteAction("Модуль ModStartApp остановлен");
         }
 
         public override void OnIteration()
@@ -36,7 +37,29 @@ namespace Scada.Server.Modules.ModStartApp.Logic
             if(sendDataWritePeriod)
             {
                 SendDataWritePeriod();
-            }            
+            }   
+            
+            if(sendDateConfig)
+            {
+                SendDateConfig();
+            }
+        }
+
+        private void SendDateConfig()
+        {
+            CnlData curDataStart = ServerContext.GetCurrentData(RepositoryConfigInfo.cnlNumStartDate);
+            CnlData curDataEnd = ServerContext.GetCurrentData(RepositoryConfigInfo.cnlNumEndDate);
+
+            if (curDataStart.IsDefined && curDataEnd.IsDefined)
+            {
+                curDataStart.Val = RepositoryConfigInfo.ObejctConfig.StartDT.ToOADate();
+                ServerContext.WriteCurrentData(RepositoryConfigInfo.cnlNumStartDate, curDataStart);
+
+                curDataEnd.Val = RepositoryConfigInfo.ObejctConfig.EndDT.ToOADate();
+                ServerContext.WriteCurrentData(RepositoryConfigInfo.cnlNumEndDate, curDataEnd);
+            }
+
+            sendDateConfig = false;
         }
 
         private void SendDataLimits()

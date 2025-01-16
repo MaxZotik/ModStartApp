@@ -14,8 +14,8 @@ namespace Scada.Server.Modules.ModStartApp.Logic.Classes
 
         public ConfigInfo(DateTime start, DateTime end)
         {
-            StartDT = start;
-            EndDT = end;
+            StartDT = start.AddHours(-3);
+            EndDT = end.AddHours(-3);
         }
     }
 }
